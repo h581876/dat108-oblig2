@@ -21,16 +21,21 @@ public class HamburgerBrett {
 			}
 		}
 		brett.add(hamburger);
-		System.out.println(kokkNavn + " La på: " + hamburger + " | Antall på brettet: " + brett.size());
+		System.out.println(kokkNavn + "(kokk) La på: " + hamburger + " hamburger" +  " | Antall på brettet: " + brett.size());
 		notifyAll();
 	}
 	
-	public synchronized void taAv(Hamburger hamburger) throws InterruptedException {
+	public synchronized Hamburger taAv(String navn)  {
 		while (brett.isEmpty()) {
-			wait();
+			try {
+				wait();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
-		brett.poll();
-		System.out.println("Tok av: " + hamburger + " | Antall på brettet: " + brett.size());
+		Hamburger h = brett.poll();
+		System.out.println(navn + " (servitør) tok av: " + h + " | Antall på brettet: " + brett.size());
+		return h;
 	}
 
 	

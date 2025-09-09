@@ -1,13 +1,13 @@
 package oppgave2;
 
-public class Kokk implements Runnable {
+public class Servitor implements Runnable {
 	
 	private final String navn;
 	private final HamburgerBrett brett;
-	private int teller = 0;
 	
 	
-	public Kokk(String navn, HamburgerBrett brett) {
+	public Servitor(String navn, HamburgerBrett brett) {
+		
 		this.navn = navn;
 		this.brett = brett;
 	}
@@ -15,9 +15,9 @@ public class Kokk implements Runnable {
 	@Override
 	public void run() {
 		while (true) {
-			Hamburger h = new Hamburger (++teller); //lager ny som teller opp
 			
-			brett.leggPå(h, navn);
+			
+			Hamburger h = brett.taAv(navn);
 			
 			int sekunder = (int) (Math.random() * 5) + 2; // tilfeldig tall mellom 2 og 6 sek
 			
@@ -32,3 +32,5 @@ public class Kokk implements Runnable {
 	
 
 }
+
+
