@@ -17,7 +17,7 @@ public class Servitor implements Runnable {
 		while (true) {
 			
 			
-			Hamburger h = brett.taAv(navn);
+			brett.taAv(navn);
 			
 			int sekunder = (int) (Math.random() * 5) + 2; // tilfeldig tall mellom 2 og 6 sek
 			

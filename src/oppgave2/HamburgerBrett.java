@@ -21,7 +21,7 @@ public class HamburgerBrett {
 			}
 		}
 		brett.add(hamburger);
-		System.out.println(kokkNavn + "(kokk) La på: " + hamburger + " hamburger" +  " | Antall på brettet: " + brett.size());
+		System.out.println(kokkNavn + "(kokk) La på: " + "hamburger id nr: " + hamburger +  " | Antall på brettet: " + brett.size());
 		notifyAll();
 	}
 	
@@ -34,7 +34,7 @@ public class HamburgerBrett {
 			}
 		}
 		Hamburger h = brett.poll();
-		System.out.println(navn + " (servitør) tok av: " + h + " | Antall på brettet: " + brett.size());
+		System.out.println(navn + " (servitør) tok av: " + "hamburger id nr: " + h + " | Antall på brettet: " + brett.size());
 		return h;
 	}
 
