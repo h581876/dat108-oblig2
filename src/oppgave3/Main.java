@@ -1,4 +1,4 @@
-package oppgave2;
+package oppgave3;
 
 public class Main {
 	
@@ -18,15 +18,14 @@ public class Main {
         System.out.println("Vi starter ...\n");
     }
 
-	public static void main(String[] args) {
-		
-		final String [] kokker = {"Anne", "Erik", "Knut"};
-		final String [] servitorer = {"Mia", "Per"};
-		final int kapasitet = 4;
-		
-		skrivUtHeader(kokker, servitorer, kapasitet);
-		
-		HamburgerBrett brett = new HamburgerBrett(kapasitet);
+    public static void main(String[] args) {
+        final String[] kokker = {"Anne", "Erik", "Knut"};
+        final String[] servitorer = {"Mia", "Per"};
+        final int kapasitet = 4;
+
+        skrivUtHeader(kokker, servitorer, kapasitet);
+
+        HamburgerBrett brett = new HamburgerBrett(kapasitet);
 		
 		for (String navn : kokker) {
 			Thread t = new Thread(new Kokk(navn, brett));
